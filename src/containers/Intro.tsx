@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import myImage from 'assets/my-image.jpeg';
-import { baseColor } from 'styles/base';
+import { baseColor, baseStyle } from 'styles/base';
 import { Button } from 'components';
 
 let imgWidth = 300;
@@ -97,10 +97,11 @@ const KnowMoreBtn = styled(Button)`
 
 const MainWrapper = styled.div`
   width: 100%;
-  height: 100%;
+  height: 100vh;
+  min-height: 700px;
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: center;
 `;
 const ProTextWrapper = styled.div`
@@ -134,7 +135,8 @@ const StyledImg = styled.img<{ offSet?: offSetType }>`
   height: 300px;
   object-fit: cover;
   border-radius: 100%;
-  animation: shadow 2s ease-in-out infinite;
+  //animation: shadow 2s ease-in-out infinite;
+  transition: 0.1s;
 
   @keyframes shadow {
     0% {
@@ -151,7 +153,7 @@ const StyledImg = styled.img<{ offSet?: offSetType }>`
 type offSetType = Number;
 
 const IntroText = styled.h1`
-  font-size: 38px;
+  font-size: ${baseStyle.mainHeadingFont};
 `;
 const Pri = styled.span`
   color: ${baseColor.primary};

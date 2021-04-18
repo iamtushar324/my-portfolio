@@ -1,12 +1,12 @@
 import styled from 'styled-components';
 import { baseColor } from 'styles/base';
-import { Intro } from 'containers';
+import { Intro, Exp } from 'containers';
 
 export default function App() {
   return (
     <MainWrapper>
       <Intro />
-      <div id="m"></div>
+      <Exp />
     </MainWrapper>
   );
 }
@@ -14,9 +14,8 @@ export default function App() {
 // Styles
 
 const MainWrapper = styled.div`
-  height: 100vh;
-  width: 100vw;
-  padding: 0 0;
+  width: 70vw;
+  padding: 0 15vw;
   background-color: ${baseColor.background};
   color: ${baseColor.onBackground};
 `;
