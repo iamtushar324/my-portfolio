@@ -70,12 +70,14 @@ export default function Exp() {
 //Constants
 
 const CONTENT_HEIGHT = '200px';
-const BOX_HEIGHT = 4;
+const BOX_HEIGHT = 3;
 
 //styles
 
 const MainWrapper = styled.div`
   //background-color: ${baseColor.surface};
+  border-bottom: 1px solid ${baseColor.surface};
+  padding-bottom: 60px;
 `;
 const Icon = styled.img`
   height: 30px;

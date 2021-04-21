@@ -1,3 +1,4 @@
-import {Button} from './Button'    
+import { Button } from './Button';
+import Skill from './Skill';
 
-export {Button} 
+export { Button, Skill };

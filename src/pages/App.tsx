@@ -1,12 +1,15 @@
 import styled from 'styled-components';
 import { baseColor } from 'styles/base';
-import { Intro, Exp } from 'containers';
+import { Intro, Exp, Skills } from 'containers';
+import Projects from 'containers/Projects';
 
 export default function App() {
   return (
     <MainWrapper>
       <Intro />
       <Exp />
+      <Skills />
+      <Projects />
     </MainWrapper>
   );
 }

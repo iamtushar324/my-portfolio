@@ -12,6 +12,7 @@ export const baseColor = {
   onBackground: '#FFFFFF',
   onSurface: '#FFFFFF',
   onError: '#FFFFFF',
+  lightPrimary: '#7633fb',
 };
 
 export const baseStyle = {

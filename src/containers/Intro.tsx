@@ -103,6 +103,7 @@ const MainWrapper = styled.div`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  border-bottom: 1px solid ${baseColor.surface};
 `;
 const ProTextWrapper = styled.div`
   display: inline-block;
