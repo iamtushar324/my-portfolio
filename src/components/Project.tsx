@@ -1,17 +1,28 @@
 import styled from 'styled-components';
-import SampleMain from 'assets/selfpaced-desktop.png';
-import SamplePhone from 'assets/selfpaced-phone.png';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { baseColor, baseStyle } from 'styles/base';
 import { Button } from './Button';
 
 interface Props {
   index: Number;
+  heading: String;
+  subHeading: String;
+  para: String;
+  liveProject: string;
+  githubProject: string;
+  noMobile?: Boolean;
+  mainImg?: string;
+  phoneImg?: string;
 }
 
 export default function Project(props: Props): any {
   const [activeImage, setActiveImage] = useState(false);
   const [show, setShow] = useState<imageShow>('mobile');
+  useEffect(() => {
+    if (props.noMobile) {
+      setShow('desktop');
+    }
+  }, []);
 
   return (
     <MainWrapper index={props.index}>
@@ -22,7 +33,7 @@ export default function Project(props: Props): any {
           onClick={() => {
             setActiveImage(true);
           }}
-          src={SampleMain}
+          src={props.mainImg}
           alt=" "
         />
         <PhoneImage
@@ -31,7 +42,7 @@ export default function Project(props: Props): any {
           onClick={() => {
             setActiveImage(true);
           }}
-          src={SamplePhone}
+          src={props.phoneImg}
           alt=" "
         />
         <BottomBtns>
@@ -50,13 +61,33 @@ export default function Project(props: Props): any {
             }}
             type={show === 'mobile' ? 'pri' : 'nav'}
             size="small"
+            disabled={props.noMobile}
           >
             Mobile
           </Button>
         </BottomBtns>
-        <ClickToZoom>Click on Image to Zoom</ClickToZoom>
       </ImageWrapper>
-      <ContentWrapper></ContentWrapper>
+      <ContentWrapper>
+        <Heading>{props.heading}</Heading>
+        <SubHeading>( {props.subHeading})</SubHeading>
+        <Para>{props.para}</Para>
+        <LinksWrapper>
+          <Link
+            href={props.liveProject}
+            target="_blank"
+            rel="noreferrer noopener"
+          >
+            View Live Project
+          </Link>
+          <Link
+            href={props.githubProject}
+            target="_blank"
+            rel="noreferrer noopener"
+          >
+            View Github Repo
+          </Link>
+        </LinksWrapper>
+      </ContentWrapper>
       <Overlay
         activeImageI={activeImage}
         onClick={() => {
@@ -69,15 +100,36 @@ export default function Project(props: Props): any {
 
 type imageShow = 'desktop' | 'mobile';
 
+const Link = styled.a`
+  color: ${baseColor.secondary};
+`;
+
+const LinksWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  margin-top: 30px;
+`;
+
+const SubHeading = styled.h5`
+  font-weight: 400;
+  margin-top: 0;
+  color: ${baseColor.onPrimaryLite};
+`;
+const Para = styled.p`
+  width: 80%;
+  margin: auto;
+  font-size: ${baseStyle.subTextFont};
+  color: ${baseColor.onPrimaryLite};
+`;
+
+const Heading = styled.h2`
+  font-size: 32px;
+  margin-bottom: 10px;
+`;
+
 const BottomBtns = styled.div`
   margin-top: 20px;
-`;
-const ClickToZoom = styled.span`
-  position: absolute;
-  bottom: -40px;
-  left: 50%;
-  transform: translateX(-50%);
-  font-size: ${baseStyle.smallTextFont};
 `;
 
 const Overlay = styled.div<{ activeImageI: Boolean }>`
@@ -99,15 +151,18 @@ const MainWrapper = styled.div<{ index: any }>`
   padding: 20px 10px;
   margin: 100px 0;
   display: flex;
-  flex-direction: row;
   justify-content: flex-end;
+  background-color: ${baseColor.surface};
+  padding: 80px 0px;
+  border-radius: 10px;
+
   ${(props) =>
     props.index % 2 === 0
       ? `
-  justify-content: flex-end;
+  flex-direction: row-reverse;
   `
       : `
-  justify-content: flex-start;
+  flex-direction: row;
   `}
 `;
 
@@ -124,10 +179,17 @@ const ImageWrapper = styled.div<{ index: any }>`
   border-right: 1px solid ${baseColor.onPrimaryLite};
   `}
 `;
-const ContentWrapper = styled.div``;
+const ContentWrapper = styled.div`
+  padding: 10px 20px;
+  box-sizing: border-box;
+  text-align: center;
+  width: 50%;
+`;
 
 const MainImage = styled.img<{ isActive: Boolean; isShow: Boolean }>`
-  height: 350px;
+  height: 21vw;
+  max-width: 80%;
+
   object-fit: cover;
   border-radius: 10px;
   transition-duration: 0.4s;
@@ -150,7 +212,9 @@ const MainImage = styled.img<{ isActive: Boolean; isShow: Boolean }>`
     top: 50%;
     left: 50%;
     z-index:100;
-    transform: scale(2.4) translate(-25%, -25%);
+    transform: translate(-50%, -50%);
+    height:90vh;
+
     `}
 `;
 

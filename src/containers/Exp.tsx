@@ -22,7 +22,13 @@ export default function Exp() {
               Cudy Technologies
             </Title>
             <Position>Full-Stack Developer (Full-Time)</Position>
-            <Description>Deployed New Services</Description>
+            <Description>
+              Deployed New Services
+              <br />
+              <br />
+              Technologies used :- React , Node , Ant Design , Graphql
+              , Styled-Components , SQL , MongoDb
+            </Description>
             <Link
               href={'https://cudy.co'}
               target="_blank"

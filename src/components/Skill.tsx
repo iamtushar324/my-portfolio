@@ -2,17 +2,17 @@ import styled from 'styled-components';
 import SampleIcon from 'assets/react-icon.png';
 import { baseColor, baseStyle } from 'styles/base';
 
-export default function Skill({ icon = SampleIcon }) {
+export default function Skill({ icon = SampleIcon, name = ' ' }) {
   return (
     <MainWrapper>
       <Icon src={icon} alt=" " />
-      <Title>React</Title>
+      <Title>{name}</Title>
       <DetailsBox>
         <Head>Recently used in these projects </Head>
         <ul>
           <li>
             <Link
-              href={'https://selfpaced.in'}
+              href={'http://selfpaced.in'}
               target="_blank"
               rel="noreferrer noopener"
             >
@@ -21,6 +21,25 @@ export default function Skill({ icon = SampleIcon }) {
             {' - '}
             <Link
               href={'https://github.com/nimit05/selfPaced_Frontend'}
+              target="_blank"
+              rel="noreferrer noopener"
+            >
+              (Github)
+            </Link>
+          </li>
+          <li>
+            <Link
+              href={'http://accute.live'}
+              target="_blank"
+              rel="noreferrer noopener"
+            >
+              Accute Accountings
+            </Link>
+            {' - '}
+            <Link
+              href={
+                'https://github.com/accuteAccountings/frontend_accute_web'
+              }
               target="_blank"
               rel="noreferrer noopener"
             >
@@ -69,8 +88,8 @@ const MainWrapper = styled.div`
 `;
 const Icon = styled.img`
   height: 80px;
-  width: 80px;
   object-fit: cover;
+  max-width: 100%;
 `;
 
 const Title = styled.h2``;

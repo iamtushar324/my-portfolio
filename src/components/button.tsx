@@ -7,6 +7,7 @@ export const Button: React.FC<Props> = (props: Props) => {
       cStyles={props.cStyles}
       styleType={props.type}
       onClick={props.onClick}
+      disabled={props.disabled}
     >
       {props.children}
     </StyledBtn>
@@ -43,6 +44,8 @@ const StyledBtn = styled.button<{
         border:1px solid ${baseColor.onBackground};
 
     `}
+    ${(props) =>
+    props.disabled && `     text-decoration:line-through;`}
 
     ${(props) => props.cStyles}
 `;
@@ -53,6 +56,7 @@ interface Props {
   children: any;
   cStyles?: String;
   onClick?: any;
+  disabled?: any;
 }
 
 type styleType = 'pri' | 'sec' | 'nav';

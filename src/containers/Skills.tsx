@@ -1,18 +1,26 @@
 import { Skill } from 'components';
 import styled from 'styled-components';
 import { baseColor, baseStyle } from 'styles/base';
+import React from 'assets/react-icon.png';
+import Node from 'assets/node.png';
+import Docker from 'assets/docker.png';
+import Antd from 'assets/antd.svg';
+import Cpp from 'assets/c++.png';
+import MySql from 'assets/mysql.png';
+import MongoDb from 'assets/mongodb.png';
 
 export default function Skills() {
   return (
     <MainWrapper>
       <Heading>Skills</Heading>
       <SkillWrapper>
-        <Skill />
-        <Skill />
-        <Skill />
-        <Skill />
-        <Skill />
-        <Skill />
+        <Skill name={'React Js'} icon={React} />
+        <Skill name={'Node Js'} icon={Node} />
+        <Skill name={'Docker'} icon={Docker} />
+        <Skill name={'Ant Design'} icon={Antd} />
+        <Skill name={'C++'} icon={Cpp} />
+        <Skill name={'MySql'} icon={MySql} />
+        <Skill name={'Mongo DB'} icon={MongoDb} />
       </SkillWrapper>
     </MainWrapper>
   );
