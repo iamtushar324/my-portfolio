@@ -29,7 +29,7 @@ export default function Skill({ icon = SampleIcon, name = ' ' }) {
           </li>
           <li>
             <Link
-              href={'http://accute.live'}
+              href={'http://accusafe.net.in'}
               target="_blank"
               rel="noreferrer noopener"
             >
