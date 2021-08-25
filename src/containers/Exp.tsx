@@ -21,7 +21,7 @@ export default function Exp() {
               <Icon src={CudyIcon} />
               Cudy Technologies
             </Title>
-            <Position>Full-Stack Developer (Full-Time)</Position>
+            <Position>Full-Stack Developer (Intern)</Position>
             <Description>
               Deployed New Services
               <br />
@@ -37,14 +37,22 @@ export default function Exp() {
               View Website
             </Link>
           </ContentWrapperLeft>
+          <ExpWrapper index={4}>
+            <Date>June 2021</Date>
+            <Dot />
+          </ExpWrapper>
+          <ExpWrapper index={5}>
+            <Date>Aug 2021</Date>
+            <Dot />
+          </ExpWrapper>
         </LeftSide>
         <RightSide>
-          <ContentWrapper index={0}>
+        <ContentWrapper index={-1}>
             <Title>
               <Icon src={CudyIcon} />
               Cudy Technologies
             </Title>
-            <Position>Frontend Developer (Full-Time)</Position>
+            <Position>Frontend Developer (Intern)</Position>
             <Description>
               Design UI/UX of new services <br />
               <br />
@@ -59,14 +67,33 @@ export default function Exp() {
               View Website
             </Link>
           </ContentWrapper>
+
           <ExpWrapperRight index={2}>
             <DateRight>Feb 2021</DateRight>
             <DotRight />
           </ExpWrapperRight>
           <ExpWrapperRight index={3}>
-            <DateRight> Present</DateRight>
+            <DateRight> May 2021</DateRight>
             <DotRight />
           </ExpWrapperRight>
+        
+          <ContentWrapper index={2}>
+            <Title>
+              QSS Ventures
+            </Title>
+            <Position>Software Development Engineer (Intern)</Position>
+            <Description>
+               Architected and developed React Web-App and a multi-platform <br/> Flutter app within 2 weeks <br />
+              Technologies used :- React , Node , Flutter , MongoDb
+            </Description>
+            <Link
+              href={'http://www.qssventures.com/'}
+              target="_blank"
+              rel="noreferrer noopener"
+            >
+              View Website
+            </Link>
+          </ContentWrapper>
         </RightSide>
       </TimelineWrapper>
     </MainWrapper>
@@ -76,7 +103,7 @@ export default function Exp() {
 //Constants
 
 const CONTENT_HEIGHT = '200px';
-const BOX_HEIGHT = 3;
+const BOX_HEIGHT = 5;
 
 //styles
 
@@ -119,12 +146,14 @@ const DateRight = styled.div`
   padding-left: 20px;
 `;
 
-const ContentWrapper = styled.div<{ index: Number }>`
+const ContentWrapper = styled.div<{ index: number }>`
   padding: 30px 18%;
   border-left: 2px solid ${baseColor.primary};
   height: ${CONTENT_HEIGHT};
   box-sizing: border-box;
   margin-left: -2px;
+  margin-top: ${(props: { index: number }) =>
+    `calc(${CONTENT_HEIGHT} * ${props.index + 1})`};
 `;
 const ContentWrapperLeft = styled.div<{ index: number }>`
   padding: 30px 18%;

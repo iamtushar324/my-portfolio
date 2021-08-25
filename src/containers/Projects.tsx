@@ -12,7 +12,7 @@ export default function Projects() {
           heading={'Seflpaced.in'}
           subHeading={'A PDF Sharing Website'}
           para={
-            "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
+            "Students can able to share their digital copy of class notes on this website. Used by 50 students to share and get latest subject notes for exams. Technogogies Used : - React , Nodejs , SASS , Image Compression ( Lossy )"
           }
           liveProject={'http://selfpaced.in'}
           githubProject={
@@ -27,7 +27,7 @@ export default function Projects() {
           heading={'Accute Accountings'}
           subHeading={'Accounting Software for Wholesale Bussiness'}
           para={
-            "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
+            "Developed a web application that helps business owners to track, process, and analyze their orders and goods with easy-to-use UI and Intuitive UX.\n- Managed, optimized, Secured, and updated Linux Servers for low latency and high availability. Helping more than 10 business owners in the biggest wholesale market of Delhi.Conducted Meetings for file structure, UX improvements, Security Issues, Bug Reporting, etc."
           }
           liveProject={'http://accusafe.net.in'}
           githubProject={

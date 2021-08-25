@@ -189,7 +189,6 @@ const ContentWrapper = styled.div`
 const MainImage = styled.img<{ isActive: Boolean; isShow: Boolean }>`
   height: 21vw;
   max-width: 80%;
-
   object-fit: cover;
   border-radius: 10px;
   transition-duration: 0.4s;
@@ -240,6 +239,7 @@ const PhoneImage = styled.img<{ isActive: Boolean; isShow: Boolean }>`
     top: 50%;
     left: 50%;
     z-index:100;
-    transform: scale(2.4) translate(-25%, -25%);
+    transform: translate(-50%, -50%);
+    height:90vh;
     `}
 `;
