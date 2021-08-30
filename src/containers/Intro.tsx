@@ -3,6 +3,9 @@ import styled from 'styled-components';
 import myImage from 'assets/my-image.jpeg';
 import { baseColor, baseStyle } from 'styles/base';
 import { Button } from 'components';
+import GithubIcon from 'assets/github.png'
+import LinkedinIcon from 'assets/linkedin.png'
+import SendMail from 'assets/sendMail.png'
 
 let imgWidth = 300;
 
@@ -80,11 +83,39 @@ export default function Intro() {
       <ImageWrapper>
         <StyledImg src={myImage} alt=" " offSet={offSet} />
       </ImageWrapper>
+        <SocialIconWrapper>
+          <a href="https://github.com/iamtushar324" target="_blank">
+          <Icon src={GithubIcon} alt=" " />
+          </a>
+          <a href="https://www.linkedin.com/in/tushar-bhardwaj-5a820a193/" target="_blank">
+          <Icon src={LinkedinIcon} alt=" " />
+          </a>
+          <a href="mailto:iamtushar324@gmail.com" target="_black">
+          <Icon src={SendMail} alt=" " />
+          </a>
+        </SocialIconWrapper>
     </MainWrapper>
   );
 }
 
 //styles
+
+const SocialIconWrapper = styled.div`
+display:flex;
+flex-direction: column;
+padding:10px;
+justify-content: space-evenly;
+height: 200px;
+position:fixed;
+top:30%;
+left:20px;
+
+`;
+const Icon = styled.img`
+height: 30px;
+border-radius:5px;
+cursor: pointer;
+`
 
 const KnowMoreBtn = styled(Button)`
   background-color: ${baseColor.primary};

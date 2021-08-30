@@ -12,6 +12,9 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+#for-mobile{
+  display:none;
+}
 
   
 @media only screen and (max-width: 600px) {
@@ -22,6 +25,7 @@ code {
     height: 100vh;
     text-align: center;
     padding-top:200px;
+    display:block;
   }
   #root{
     display: none;
