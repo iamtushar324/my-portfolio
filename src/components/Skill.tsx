@@ -76,13 +76,20 @@ const MainWrapper = styled.div`
   margin: 50px 40px;
   position: relative;
   transition-duration: 0.2s;
+  cursor: pointer;
+  div {
+    transition-duration: 0.2s;
+    opacity: 0;
+    visibility: hidden;
+  }
 
   &:hover {
-    transform: scale(1.5);
+    transform: scale(1.2);
     z-index: 10;
 
     div {
-      display: block;
+      opacity: 1;
+      visibility: visible;
     }
   }
 `;
@@ -102,7 +109,7 @@ const DetailsBox = styled.div`
   width: 210px;
   height: 100%;
   border-radius: ${borderRadius};
-  display: none;
+  display: block;
   font-size: calc(${baseStyle.smallTextFont} - 3px);
   padding: 10px 5px;
   box-sizing: border-box;

@@ -155,6 +155,7 @@ const MainWrapper = styled.div<{ index: any }>`
   background-color: ${baseColor.surface};
   padding: 80px 0px;
   border-radius: 10px;
+  z-index: 100;
 
   ${(props) =>
     props.index % 2 === 0

@@ -2,10 +2,10 @@ import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import myImage from 'assets/my-image.jpeg';
 import { baseColor, baseStyle } from 'styles/base';
-import { Button } from 'components';
-import GithubIcon from 'assets/github.png'
-import LinkedinIcon from 'assets/linkedin.png'
-import SendMail from 'assets/sendMail.png'
+import { Button, ScrollDownBtn } from 'components';
+import GithubIcon from 'assets/github.png';
+import LinkedinIcon from 'assets/linkedin.png';
+import SendMail from 'assets/sendMail.png';
 
 let imgWidth = 300;
 
@@ -69,6 +69,7 @@ export default function Intro() {
 
   return (
     <MainWrapper>
+      <ScrollDownBtn />
       <TextWrapper>
         <IntroText>
           Hi , I'm{' '}
@@ -83,17 +84,20 @@ export default function Intro() {
       <ImageWrapper>
         <StyledImg src={myImage} alt=" " offSet={offSet} />
       </ImageWrapper>
-        <SocialIconWrapper>
-          <a href="https://github.com/iamtushar324" target="_blank">
+      <SocialIconWrapper>
+        <a href="https://github.com/iamtushar324" target="_blank">
           <Icon src={GithubIcon} alt=" " />
-          </a>
-          <a href="https://www.linkedin.com/in/tushar-bhardwaj-5a820a193/" target="_blank">
+        </a>
+        <a
+          href="https://www.linkedin.com/in/tushar-bhardwaj-5a820a193/"
+          target="_blank"
+        >
           <Icon src={LinkedinIcon} alt=" " />
-          </a>
-          <a href="mailto:iamtushar324@gmail.com" target="_black">
+        </a>
+        <a href="mailto:iamtushar324@gmail.com" target="_black">
           <Icon src={SendMail} alt=" " />
-          </a>
-        </SocialIconWrapper>
+        </a>
+      </SocialIconWrapper>
     </MainWrapper>
   );
 }
@@ -101,21 +105,20 @@ export default function Intro() {
 //styles
 
 const SocialIconWrapper = styled.div`
-display:flex;
-flex-direction: column;
-padding:10px;
-justify-content: space-evenly;
-height: 200px;
-position:fixed;
-top:30%;
-left:20px;
-
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  justify-content: space-evenly;
+  height: 200px;
+  position: fixed;
+  top: 30%;
+  left: 20px;
 `;
 const Icon = styled.img`
-height: 30px;
-border-radius:5px;
-cursor: pointer;
-`
+  height: 30px;
+  border-radius: 5px;
+  cursor: pointer;
+`;
 
 const KnowMoreBtn = styled(Button)`
   background-color: ${baseColor.primary};
@@ -193,9 +196,24 @@ const Pri = styled.span`
 
 const TextWrapper = styled.div`
   min-width: 376px;
+  z-index: 100;
 `;
 const ImageWrapper = styled.div`
   background-color: ${baseColor.surface};
   padding: 20px;
   border-radius: 100%;
+  z-index: 100;
+  animation: float 3s ease-in-out 2s infinite alternate;
+
+  @keyframes float {
+    0% {
+      transform: translateY(-10px);
+    }
+    50% {
+      transform: translateY(10px);
+    }
+    100% {
+      transform: translateY(-10px);
+    }
+  }
 `;
